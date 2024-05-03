@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Comicartoon-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://person.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.286275, 0.662745, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -193.5
+margin_top = -90.5
+margin_right = 193.5
+margin_bottom = -9.5
+custom_colors/font_color = Color( 0.952941, 0.129412, 0.623529, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "PINK RUNNER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 16.0
+margin_right = 90.0
+margin_bottom = 118.0
+grow_vertical = 2
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.839216, 0.835294, 0.0784314, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Start Game"
+flat = true
+
+[node name="character" type="Button" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 180.0
+margin_bottom = 46.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.839216, 0.835294, 0.0784314, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Main Character"
+flat = true
+
+[node name="score" type="Button" parent="VBoxContainer"]
+margin_top = 56.0
+margin_right = 180.0
+margin_bottom = 74.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.839216, 0.835294, 0.0784314, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Score"
+flat = true
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 180.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.839216, 0.835294, 0.0784314, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Exit"
+flat = true
+
+[node name="person" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 48 )
