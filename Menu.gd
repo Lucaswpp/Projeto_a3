@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Nivel_1.tscn")
+	get_tree().change_scene("res://Tutorial.tscn")
 
 
 func _on_character_pressed():
@@ -11,9 +11,7 @@ func _on_character_pressed():
 
 
 func _on_score_pressed():
-	pass
-
-
+	get_tree().change_scene("res://Score.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()
