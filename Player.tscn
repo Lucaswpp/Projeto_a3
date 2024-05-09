@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Main Characters/Pink Man/Run.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Main Characters/Virtual Guy/Run (32x32).png" type="Texture" id=8]
 [ext_resource path="res://Assets/Main Characters/Virtual Guy/Jump (32x32).png" type="Texture" id=9]
 [ext_resource path="res://Assets/Main Characters/Virtual Guy/Double Jump (32x32).png" type="Texture" id=10]
+[ext_resource path="res://Assets/Main Characters/Pink Man/hit.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -174,6 +175,47 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "hit_pink_man"
+length = 0.43
+step = 0.07
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -425,10 +467,15 @@ tracks/2/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 9.5, 12.5 )
 
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 13.5, 13.5 )
+
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = 2
 texture = ExtResource( 1 )
 hframes = 12
 
@@ -437,6 +484,7 @@ anims/RESET = SubResource( 6 )
 anims/d_jump_mask_dude = SubResource( 11 )
 anims/d_jump_pink_man = SubResource( 8 )
 anims/d_jump_virtual_guy = SubResource( 14 )
+anims/hit_pink_man = SubResource( 16 )
 anims/jump_mask_dude = SubResource( 9 )
 anims/jump_pink_man = SubResource( 7 )
 anims/jump_virtual_guy = SubResource( 13 )
@@ -447,3 +495,13 @@ anims/run_virtual_guy = SubResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 1.5 )
 shape = SubResource( 3 )
+
+[node name="hurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+self_modulate = Color( 0.435294, 0.0313726, 0.560784, 1 )
+position = Vector2( -0.5, 0.5 )
+shape = SubResource( 15 )
+
+[connection signal="animation_finished" from="anima" to="." method="_on_anima_animation_finished"]
+[connection signal="body_entered" from="hurtBox" to="." method="_on_hurtBox_body_entered"]

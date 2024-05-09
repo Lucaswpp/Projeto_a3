@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Terrain/Terra.png" type="Texture" id=2]
@@ -169,6 +169,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 7 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 696, 19 )
+
 [node name="Nivel_1" type="Node2D"]
 script = ExtResource( 6 )
 
@@ -201,3 +204,12 @@ custom_fonts/font = SubResource( 5 )
 text = "0"
 align = 1
 valign = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 16, 240 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 456, 4 )
+shape = SubResource( 6 )
