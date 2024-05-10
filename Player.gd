@@ -8,10 +8,10 @@ var cont_jump = 0
 var player_name = ResourceLoader.load("res://save_game/GameConfig.tres").duplicate()
 var state_player = "run_" + player_name.personagem
 var hit_player = false
-
+var direction = 0
 
 func _ready():
-	position.x = 70
+	position.x = 60
 	position.y = 80
 
 func jump_event():
