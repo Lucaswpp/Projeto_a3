@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://pixelart.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Main Characters/Pink Man/Idle (32x32).png" type="Texture" id=2]
+[ext_resource path="res://Assets/Main Characters/Mask Dude/Idle (32x32).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Main Characters/Virtual Guy/Idle (32x32).png" type="Texture" id=4]
+[ext_resource path="res://Score.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Main Characters/Pink Man/Exit.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[node name="Score" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.286275, 0.662745, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 16.0
+margin_bottom = 30.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 80.0
+margin_right = 188.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Character"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+margin_left = 288.0
+margin_right = 400.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "High Score"
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="pink_man" type="Sprite" parent="sprites"]
+position = Vector2( 128, 80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+hframes = 11
+
+[node name="mask_dude" type="Sprite" parent="sprites"]
+position = Vector2( 128, 144 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+hframes = 11
+
+[node name="virtual_guy" type="Sprite" parent="sprites"]
+position = Vector2( 128, 208 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+hframes = 11
+
+[node name="scores" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="scores"]
+margin_left = 320.0
+margin_top = 75.0
+margin_right = 365.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 2 )
+text = "1000"
+
+[node name="Label2" type="Label" parent="scores"]
+margin_left = 326.0
+margin_top = 142.0
+margin_right = 366.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 3 )
+text = "500"
+
+[node name="Label3" type="Label" parent="scores"]
+margin_left = 326.0
+margin_top = 208.0
+margin_right = 366.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 4 )
+text = "250"
+
+[node name="exit" type="Button" parent="."]
+margin_left = 432.0
+margin_top = 240.0
+margin_right = 468.0
+margin_bottom = 274.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 6 )
+flat = true
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
