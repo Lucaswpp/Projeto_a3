@@ -6,7 +6,14 @@
 script = ExtResource( 1 )
 personagem = "pink_man"
 scores = {
-"mask_dude": 2079,
-"pink_man": 3524,
+"mask_dude": 884,
+"pink_man": 5521,
 "virtual_guy": 2750
+}
+idioma = "Brasil"
+diff = "medio"
+dict_time_diff = {
+"dificil": 0.8,
+"facil": 2.5,
+"medio": 1.2
 }

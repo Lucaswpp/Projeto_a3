@@ -38,21 +38,24 @@ margin_bottom = 30.0
 custom_constants/separation = 100
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="00" type="Label" parent="HBoxContainer"]
 margin_left = 80.0
 margin_right = 188.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 1 )
 text = "Character"
+align = 1
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="01" type="Label" parent="HBoxContainer"]
 margin_left = 288.0
 margin_right = 400.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 1 )
 text = "High Score"
+align = 1
 
 [node name="sprites" type="Node2D" parent="."]
+position = Vector2( 17, 0 )
 
 [node name="pink_man" type="Sprite" parent="sprites"]
 position = Vector2( 128, 80 )

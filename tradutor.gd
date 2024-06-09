@@ -21,9 +21,22 @@ var frases = {
 		"01": "Clique em enter para iniciar o jogo"
 	},
 	
-	"Charactere":{
+	"Character":{
 		"00": "Selecione o seu personagem"
-	}
+	},
+	
+	"Config":
+		{
+			"00":"Configuração",
+			"01":"Idioma",
+			"02": "Dificuldade"
+		},
+		
+		"Score":
+		{
+			"00":"Personagem",
+			"01":"Pontos"
+		}
 	
 	},
 	
@@ -43,7 +56,20 @@ var frases = {
 	},
 	"Character": {
 	  "00": "Select your character"
-	}
+	},
+	
+	"Config":
+		{
+			"00":"Configuration",
+			"01":"Languagem",
+			"02": "Dificulty"
+		},
+	
+	"Score":
+		{
+			"00":"Charactere",
+			"01":"Score"
+		}
   },
 
  "Russo": {
@@ -62,7 +88,20 @@ var frases = {
 	},
 	"Character": {
 	  "00": "Выберите своего персонажа"
-	}
+	},
+	
+	"Config":
+		{
+			"00":"Настройки",
+			"01":"Язык",
+			"02": "трудность"
+		},
+		
+		"Score":
+		{
+			"00":"Характер",
+			"01":"Характер"
+		}
   }
 }
 

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var index = 0
 onready var lista_sprites = $"."

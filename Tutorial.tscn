@@ -16,7 +16,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
-font_data = ExtResource( 1 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 10
@@ -80,24 +80,21 @@ margin_bottom = 223.0
 custom_fonts/font = SubResource( 2 )
 text = "2x"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
+[node name="00" type="Label" parent="."]
+margin_left = 1.0
 margin_top = 32.0
-margin_bottom = 46.0
-alignment = 1
-
-[node name="Label" type="Label" parent="HBoxContainer"]
-margin_left = 146.0
-margin_right = 334.0
-margin_bottom = 18.0
+margin_right = 479.0
+margin_bottom = 50.0
 custom_fonts/font = SubResource( 1 )
 text = "game tutorial"
 align = 1
 
-[node name="Label" type="Label" parent="."]
-margin_left = 96.0
+[node name="01" type="Label" parent="."]
+margin_left = 5.0
 margin_top = 256.0
-margin_right = 386.0
+margin_right = 478.0
 margin_bottom = 270.0
 custom_fonts/font = SubResource( 3 )
 text = "Press Enter to start the game"
+align = 1
+valign = 1

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var index = 0
 onready var  lista_sprites = $"."
@@ -27,9 +27,9 @@ func validate_pos(num):
 	var pos_num = (index + num)
 	
 	if (num + index) < 0:
-		pos_num = 3
+		pos_num = 2
 		
-	elif (num + index) > 3:
+	elif (num + index) > 2:
 		pos_num = 0
 	
 	return pos_num

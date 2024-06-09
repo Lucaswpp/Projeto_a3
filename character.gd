@@ -4,7 +4,12 @@ onready var lista_sprites = $sprite_list
 var index = 0
 var path_save = "res://save_game/"
 var file_name = "GameConfig.tres"
-onready var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
+var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
+var idioma_mode = Tradutor.translate_game_path(obj_gameConfig.idioma+"."+"Character")
+onready var texto = $"00"
+
+func _ready():
+	translate_game()
 
 func _on_left_pressed():
 	togle_sprite(-1)
@@ -49,3 +54,7 @@ func get_select_person():
 		cont += 1
 		if i.visible == true:
 			return i.name
+
+func translate_game():
+	texto.text = idioma_mode[texto.name]
+	
