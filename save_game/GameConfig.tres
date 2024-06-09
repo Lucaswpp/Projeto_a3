@@ -5,3 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 personagem = "pink_man"
+scores = {
+"mask_dude": 2079,
+"pink_man": 3524,
+"virtual_guy": 2750
+}

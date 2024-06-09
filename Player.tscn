@@ -583,6 +583,7 @@ position = Vector2( 0.5, 1.5 )
 shape = SubResource( 3 )
 
 [node name="hurtBox" type="Area2D" parent="."]
+collision_mask = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 self_modulate = Color( 0.435294, 0.0313726, 0.560784, 1 )

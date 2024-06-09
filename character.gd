@@ -4,6 +4,7 @@ onready var lista_sprites = $sprite_list
 var index = 0
 var path_save = "res://save_game/"
 var file_name = "GameConfig.tres"
+onready var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
 
 func _on_left_pressed():
 	togle_sprite(-1)
@@ -13,7 +14,6 @@ func _on_right_pressed():
 	togle_sprite(1)
 
 func _on_Ok_pressed():
-	var obj_gameConfig = GameConfig.new()
 	obj_gameConfig.personagem = get_select_person()
 	ResourceSaver.save(path_save + file_name, obj_gameConfig)
 	get_tree().change_scene("res://Menu.tscn")

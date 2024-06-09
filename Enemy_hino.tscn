@@ -39,7 +39,8 @@ tracks/0/keys = {
 }
 
 [node name="Enemy_hino" type="KinematicBody2D"]
-collision_mask = 2
+collision_layer = 8
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
