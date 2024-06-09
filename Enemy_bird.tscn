@@ -40,7 +40,8 @@ tracks/0/keys = {
 }
 
 [node name="Enemy_bird" type="KinematicBody2D"]
-collision_mask = 4
+collision_layer = 4
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

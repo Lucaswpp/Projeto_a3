@@ -32,7 +32,7 @@ func jump_state():
 	else:
 		state = "rabbit_jump"
 		if veloc.y < 0:
-			state = "rabbit_fall"
+			state = "rabit_fall"
 			
 	
 	anima.play(state)

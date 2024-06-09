@@ -6,7 +6,6 @@ onready var rino = load("res://Enemy_hino.tscn")
 onready var bird = load("res://Enemy_bird.tscn")
 onready var rabbit = load("res://Enemy_rabbit.tscn")
 onready var capetao = load("res://Enemy_capetao.tscn")
-
 var tempo_spaw = 0
 var num_random = RandomNumberGenerator.new()
 

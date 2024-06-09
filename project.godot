@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="Game_a3"
 run/main_scene="res://Nivel_1.tscn"
 
+[autoload]
+
+Tradutor="*res://tradutor.gd"
+
 [display]
 
 window/size/width=480
