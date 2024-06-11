@@ -34,6 +34,6 @@ func check_life():
 func invulneravel_time(delta):
 	if is_invuneravel:
 		time += delta
-		if time >= 0.95:
+		if time >= 0.65:
 			is_invuneravel = false
 			time = 0

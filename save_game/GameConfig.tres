@@ -7,7 +7,7 @@ script = ExtResource( 1 )
 personagem = "pink_man"
 scores = {
 "mask_dude": 884,
-"pink_man": 5521,
+"pink_man": 3255,
 "virtual_guy": 2750
 }
 idioma = "Brasil"

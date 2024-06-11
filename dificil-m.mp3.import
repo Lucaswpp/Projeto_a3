@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dificil-m.mp3-c1f0a52bed26468ba2e6a6ad0aaf66a5.mp3str"
+
+[deps]
+
+source_file="res://dificil-m.mp3"
+dest_files=[ "res://.import/dificil-m.mp3-c1f0a52bed26468ba2e6a6ad0aaf66a5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
