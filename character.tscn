@@ -73,6 +73,8 @@ margin_top = 174.0
 margin_right = 716.0
 margin_bottom = 680.0
 rect_scale = Vector2( 0.15, 0.15 )
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 7 )
 flat = true
 

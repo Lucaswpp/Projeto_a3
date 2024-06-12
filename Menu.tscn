@@ -119,6 +119,8 @@ margin_left = 429.0
 margin_right = 941.0
 margin_bottom = 506.0
 rect_scale = Vector2( 0.1, 0.1 )
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 5 )
 flat = true
 

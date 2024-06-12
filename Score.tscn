@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://pixelart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Main Characters/Pink Man/Idle (32x32).png" type="Texture" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Assets/Main Characters/Virtual Guy/Idle (32x32).png" type="Texture" id=4]
 [ext_resource path="res://Score.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Main Characters/Pink Man/Exit.png" type="Texture" id=6]
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
@@ -39,38 +40,38 @@ custom_constants/separation = 100
 alignment = 1
 
 [node name="00" type="Label" parent="HBoxContainer"]
-margin_left = 80.0
-margin_right = 188.0
-margin_bottom = 14.0
+margin_left = 78.0
+margin_right = 222.0
+margin_bottom = 16.0
 custom_fonts/font = SubResource( 1 )
 text = "Character"
 align = 1
 
 [node name="01" type="Label" parent="HBoxContainer"]
-margin_left = 288.0
-margin_right = 400.0
-margin_bottom = 14.0
+margin_left = 322.0
+margin_right = 402.0
+margin_bottom = 16.0
 custom_fonts/font = SubResource( 1 )
-text = "High Score"
+text = "Score"
 align = 1
 
 [node name="sprites" type="Node2D" parent="."]
 position = Vector2( 17, 0 )
 
 [node name="pink_man" type="Sprite" parent="sprites"]
-position = Vector2( 128, 80 )
+position = Vector2( 126, 80 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 hframes = 11
 
 [node name="virtual_guy" type="Sprite" parent="sprites"]
-position = Vector2( 128, 208 )
+position = Vector2( 126, 208 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 hframes = 11
 
 [node name="mask_dude" type="Sprite" parent="sprites"]
-position = Vector2( 128, 144 )
+position = Vector2( 127, 144 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 hframes = 11
