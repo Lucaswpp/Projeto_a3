@@ -11,6 +11,8 @@ var hit_player = false
 var direction = 0
 var speed = 4000
 var life = 3
+var start_invecible_state = false
+var time = 0
 
 func _ready():
 	position.x = 60
@@ -52,6 +54,7 @@ func check_evento(delta):
 	if not hit_player:
 		jump_event()
 		move_event(delta)
+		invecivel_event(delta)
 
 func _on_hurtBox_body_entered(body):
 	var nome = body.name.split("_")[0]
@@ -59,7 +62,7 @@ func _on_hurtBox_body_entered(body):
 	if nome == "Enemy" or nome == "@Enemy":
 		hit_player = true
 		$"anima".play("hit_"+player_name.personagem)
-		velocidade.x += -10
+		velocidade.x += -5
 		$"../Life".damage()
 
 
@@ -68,8 +71,23 @@ func _on_anima_animation_finished(anim_name):
 	if anim_name == "hit_"+player_name.personagem:
 		hit_player = false
 		velocidade.x = 0
+		start_invecible_state = true
 
 func move_event(delta):
 	
 	direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	velocidade.x = direction * speed * delta
+
+func invecivel_event(delta):
+	if start_invecible_state:
+		if $"../Life".is_invuneravel:
+			show_invecible(delta)
+		else:
+			start_invecible_state = false
+			$Sprite.visible = true
+
+func show_invecible(delta):
+	time += delta
+	if time >= 0.05:
+		time = 0
+		$Sprite.visible = !$Sprite.visible 

@@ -2,6 +2,12 @@ extends Control
 
 var index = 0
 onready var  lista_sprites = $"."
+var path_save = "res://save_game/"
+var file_name = "GameConfig.tres"
+var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
+
+func _ready():
+	charge_now_config()
 
 func togle_sprite(num):
 	var cont = -1
@@ -41,3 +47,16 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	togle_sprite(1)
+
+func charge_now_config():
+	refresh_items()
+	set_config()
+
+func refresh_items():
+	for i in lista_sprites.get_children():
+		i.visible = false
+
+func set_config():
+	for i in lista_sprites.get_children():
+		if i.name == obj_gameConfig.idioma:
+			i.visible = true

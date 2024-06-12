@@ -24,22 +24,23 @@ anchor_left = 0.525
 anchor_top = 0.319
 anchor_right = 0.525
 anchor_bottom = 0.319
-margin_left = -108.0
-margin_top = -11.872
-margin_right = 108.0
-margin_bottom = 12.128
+margin_left = -251.0
+margin_top = -10.872
+margin_right = 226.0
+margin_bottom = 13.128
 custom_fonts/font = SubResource( 1 )
 text = "Game over"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -48.0
-margin_top = 32.0
-margin_right = 74.0
-margin_bottom = 72.0
+margin_left = -55.0
+margin_top = 33.0
+margin_right = 67.0
+margin_bottom = 73.0
 custom_constants/separation = 50
 
 [node name="quit" type="Button" parent="HBoxContainer"]

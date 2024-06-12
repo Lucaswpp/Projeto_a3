@@ -8,6 +8,7 @@ var time = 0
 var path_save = "res://save_game/"
 var file_name = "GameConfig.tres"
 var obj_gameConfig = ResourceLoader.load(path_save+file_name)
+onready var player = get_node("../Player")
 
 
 func _process(delta):
@@ -34,6 +35,6 @@ func check_life():
 func invulneravel_time(delta):
 	if is_invuneravel:
 		time += delta
-		if time >= 0.65:
+		if time >= 1.2:
 			is_invuneravel = false
 			time = 0

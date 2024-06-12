@@ -23,6 +23,7 @@ func _physics_process(delta):
 	veloc.y += gravidade * delta
 	
 	move_and_slide(veloc)
+	queue_enemy()
 	
 	
 func check_event():
@@ -45,3 +46,7 @@ func flip():
 	$Sprite.flip_h = not $Sprite.flip_h
 	cont_flip += 1
 	is_flip = false
+
+func queue_enemy():
+	if position.x <= -150:
+		queue_free()

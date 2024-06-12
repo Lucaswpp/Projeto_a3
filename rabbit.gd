@@ -20,6 +20,8 @@ func _physics_process(delta):
 	jump_state()
 	
 	move_and_slide(veloc,Vector2.UP)
+	
+	queue_enemy()
 
 
 func jump_state():
@@ -39,3 +41,7 @@ func jump_state():
 
 func jump():
 	veloc.y = jump_force
+
+func queue_enemy():
+	if position.x <= -150:
+		queue_free()

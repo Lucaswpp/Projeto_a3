@@ -11,13 +11,16 @@ onready var label_idioma = $"Hcontent/01"
 onready var label_diff = $"Hcontent2/02"
 
 func _ready():
-	label_titulo.text = mode_idioma[label_titulo.name]
-	label_idioma.text = mode_idioma[label_idioma.name]
-	label_diff.text = mode_idioma[label_diff.name]
-
+	translate_cena()
+	
 
 func _on_Button5_pressed():
 	obj_gameConfig.idioma = idioma_list.get_select_idioma()
 	obj_gameConfig.diff = diff_list.get_select_diff()
 	ResourceSaver.save(path_save+file_name,obj_gameConfig)
 	get_tree().change_scene("res://Menu.tscn")
+
+func translate_cena():
+	label_titulo.text = mode_idioma[label_titulo.name]
+	label_idioma.text = mode_idioma[label_idioma.name]
+	label_diff.text = mode_idioma[label_diff.name]

@@ -4,16 +4,16 @@
 
 [resource]
 script = ExtResource( 1 )
-personagem = "pink_man"
+personagem = "mask_dude"
 scores = {
-"mask_dude": 884,
-"pink_man": 3255,
-"virtual_guy": 2750
+"mask_dude": 4479,
+"pink_man": 0,
+"virtual_guy": 0
 }
-idioma = "Brasil"
-diff = "medio"
+idioma = "Ingles"
+diff = "dificil"
 dict_time_diff = {
-"dificil": 0.8,
-"facil": 2.5,
-"medio": 1.2
+"dificil": 1.6,
+"facil": 2.3,
+"medio": 1.8
 }
