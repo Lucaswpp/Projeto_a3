@@ -1,8 +1,10 @@
-extends Node2D
+extends Control
 
 var index = 0
 onready var lista_sprites = $"."
 
+func _ready():
+	charge_now_config()
 
 func togle_sprite(num):
 	var cont = -1
@@ -41,3 +43,16 @@ func _on_Button3_pressed():
 
 func _on_Button4_pressed():
 	togle_sprite(-1)
+
+func charge_now_config():
+	refresh_items()
+	set_config()
+
+func refresh_items():
+	for i in lista_sprites.get_children():
+		i.visible = false
+
+func set_config():
+	for i in lista_sprites.get_children():
+		if i.name == Gameconfig.diff:
+			i.visible = true

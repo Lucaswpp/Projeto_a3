@@ -22,17 +22,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.913725, 0.286275, 0.662745, 1 )
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="00" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -168.0
+margin_left = -239.0
 margin_top = -78.0
-margin_right = 168.0
+margin_right = 236.0
 margin_bottom = -62.0
 custom_fonts/font = SubResource( 1 )
 text = "Select your character"
+align = 1
 
 [node name="left" type="Button" parent="."]
 anchor_left = 0.5
@@ -72,6 +73,8 @@ margin_top = 174.0
 margin_right = 716.0
 margin_bottom = 680.0
 rect_scale = Vector2( 0.15, 0.15 )
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 7 )
 flat = true
 

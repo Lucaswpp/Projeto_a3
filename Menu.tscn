@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Comicartoon-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://person.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu.gd" type="Script" id=4]
+[ext_resource path="res://engrena.png" type="Texture" id=5]
+[ext_resource path="res://pixelart.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -26,6 +28,10 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=5]
 size = 12
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 26
+font_data = ExtResource( 6 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -113,7 +119,30 @@ flat = true
 [node name="person" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96, 48 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 429.0
+margin_right = 941.0
+margin_bottom = 506.0
+rect_scale = Vector2( 0.1, 0.1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="more" type="Button" parent="."]
+margin_left = 390.0
+margin_top = 12.0
+margin_right = 423.0
+margin_bottom = 41.0
+focus_mode = 0
+custom_fonts/font = SubResource( 6 )
+enabled_focus_mode = 0
+text = "..."
+flat = true
+
 [connection signal="pressed" from="VBoxContainer/00" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/01" to="." method="_on_character_pressed"]
 [connection signal="pressed" from="VBoxContainer/02" to="." method="_on_score_pressed"]
 [connection signal="pressed" from="VBoxContainer/03" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="more" to="." method="_on_more_pressed"]

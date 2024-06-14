@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/facil-m.mp3-8823ac6d795093fb049c5346a1fe6990.mp3str"
+
+[deps]
+
+source_file="res://facil-m.mp3"
+dest_files=[ "res://.import/facil-m.mp3-8823ac6d795093fb049c5346a1fe6990.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

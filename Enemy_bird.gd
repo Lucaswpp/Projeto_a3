@@ -29,6 +29,7 @@ func _physics_process(delta):
 	
 	veloc.normalized()
 	move_and_slide(veloc)
+	queue_enemy()
 
 func check_distancia_x():
 	distancia_x = ((player.position.x - position.x)*-1)
@@ -59,3 +60,7 @@ func calc_hipotenusa():
 
 func calc_speed():
 	speed = (distancia/time)
+
+func queue_enemy():
+	if position.x <= -150:
+		queue_free()

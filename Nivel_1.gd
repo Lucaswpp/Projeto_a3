@@ -5,14 +5,22 @@ var time : int  =  0
 onready var rino = load("res://Enemy_hino.tscn")
 onready var bird = load("res://Enemy_bird.tscn")
 onready var rabbit = load("res://Enemy_rabbit.tscn")
-onready var capetao = load("res://Enemy_capetao.tscn")
+onready var chicken = load("res://Enemy_chicken.tscn")
+
+
 var tempo_spaw = 0
 var num_random = RandomNumberGenerator.new()
+onready var music_list = $music_list
 
+func _ready():
+	num_random.randomize()
+	for i in music_list.get_children():
+		if i.name == Gameconfig.diff:
+			i.play()
+			
 func _process(delta):
 	tempo_spaw += delta
-	
-	if tempo_spaw > 1.2:
+	if tempo_spaw > Gameconfig.dict_time_diff[Gameconfig.diff]:
 		tempo_spaw = 0
 		var obj_enemy = select_random_enemy()
 		$".".add_child(obj_enemy.instance())
@@ -30,5 +38,8 @@ func select_random_enemy():
 	elif decisao >= 31 and decisao <= 60:
 		return rino
 	
-	elif decisao >= 61 and decisao <= 100:
+	elif decisao >= 61 and decisao <= 70:
+		return chicken
+	
+	elif decisao >= 71 and decisao <= 100:
 		return rabbit

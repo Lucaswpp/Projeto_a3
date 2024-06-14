@@ -14,3 +14,8 @@ func _physics_process(delta):
 	pos.y += gravidade * delta
 	
 	move_and_slide(pos)
+	queue_enemy()
+
+func queue_enemy():
+	if position.x <= -150:
+		queue_free()

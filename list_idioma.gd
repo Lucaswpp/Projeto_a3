@@ -1,7 +1,10 @@
-extends Node2D
+extends Control
 
 var index = 0
 onready var  lista_sprites = $"."
+
+func _ready():
+	charge_now_config()
 
 func togle_sprite(num):
 	var cont = -1
@@ -27,9 +30,9 @@ func validate_pos(num):
 	var pos_num = (index + num)
 	
 	if (num + index) < 0:
-		pos_num = 3
+		pos_num = 2
 		
-	elif (num + index) > 3:
+	elif (num + index) > 2:
 		pos_num = 0
 	
 	return pos_num
@@ -41,3 +44,16 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	togle_sprite(1)
+
+func charge_now_config():
+	refresh_items()
+	set_config()
+
+func refresh_items():
+	for i in lista_sprites.get_children():
+		i.visible = false
+
+func set_config():
+	for i in lista_sprites.get_children():
+		if i.name == Gameconfig.idioma:
+			i.visible = true
