@@ -2,9 +2,6 @@ extends Control
 
 var index = 0
 onready var lista_sprites = $"."
-var path_save = "res://save_game/"
-var file_name = "GameConfig.tres"
-var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
 
 func _ready():
 	charge_now_config()
@@ -57,5 +54,5 @@ func refresh_items():
 
 func set_config():
 	for i in lista_sprites.get_children():
-		if i.name == obj_gameConfig.diff:
+		if i.name == Gameconfig.diff:
 			i.visible = true

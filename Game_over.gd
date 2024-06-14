@@ -1,9 +1,7 @@
 extends Control
 
-var path_save = "res://save_game/"
-var file_name = "GameConfig.tres"
-var obj_config = ResourceLoader.load(path_save+file_name).duplicate()
-var idioma_mode = Tradutor.translate_game_path(obj_config.idioma+"."+"Game_over")
+
+var idioma_mode = Tradutor.translate_game_path(Gameconfig.idioma+"."+"Game_over")
 onready var texto = $"00"
 
 func _ready():

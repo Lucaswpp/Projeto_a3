@@ -2,10 +2,7 @@ extends Control
 
 onready var lista_sprites = $sprite_list
 var index = 0
-var path_save = "res://save_game/"
-var file_name = "GameConfig.tres"
-var obj_gameConfig = ResourceLoader.load(path_save+file_name).duplicate()
-var idioma_mode = Tradutor.translate_game_path(obj_gameConfig.idioma+"."+"Character")
+var idioma_mode = Tradutor.translate_game_path(Gameconfig.idioma+"."+"Character")
 onready var texto = $"00"
 
 func _ready():
@@ -19,8 +16,7 @@ func _on_right_pressed():
 	togle_sprite(1)
 
 func _on_Ok_pressed():
-	obj_gameConfig.personagem = get_select_person()
-	ResourceSaver.save(path_save + file_name, obj_gameConfig)
+	Gameconfig.personagem = get_select_person()
 	get_tree().change_scene("res://Menu.tscn")
 	
 

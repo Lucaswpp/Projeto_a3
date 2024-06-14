@@ -11,7 +11,7 @@
 [ext_resource path="res://dificil-m.mp3" type="AudioStream" id=9]
 [ext_resource path="res://dificil.gd" type="Script" id=10]
 [ext_resource path="res://medio-m.mp3" type="AudioStream" id=11]
-[ext_resource path="res://recursos/3_30_a_m_lofi_hip_hop_jazzhop_chillhop_mix_study_sleep_homework.mp3" type="AudioStream" id=12]
+[ext_resource path="res://facil-m.mp3" type="AudioStream" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://pixelart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Main Characters/Pink Man/Jump (32x32).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Main Characters/Pink Man/space.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Main Characters/Pink Man/azinho.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Main Characters/Pink Man/Run.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Main Characters/Pink Man/dabliu.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Main Characters/Pink Man/Double Jump (32x32).png" type="Texture" id=7]
 [ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Tutorial.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Main Characters/Pink Man/dzao.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Main Characters/Pink Man/szinho.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
@@ -29,38 +34,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.913725, 0.286275, 0.662745, 1 )
 
+[node name="Azinho" type="Sprite" parent="ColorRect"]
+position = Vector2( 326, 193 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 4 )
+
 [node name="figuras" type="Node2D" parent="."]
 
 [node name="jump_p" type="Sprite" parent="figuras"]
-position = Vector2( 149, 111 )
+position = Vector2( 114, 111 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="space" type="Sprite" parent="figuras"]
-position = Vector2( 148, 182 )
+position = Vector2( 116, 179 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 
 [node name="d_jump_pink" type="Sprite" parent="figuras"]
-position = Vector2( 314, 113 )
+position = Vector2( 236, 112 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 hframes = 6
 frame = 2
 
 [node name="space2" type="Sprite" parent="figuras"]
-position = Vector2( 317, 177 )
+position = Vector2( 240, 180 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="figuras"]
-margin_left = 300.0
-margin_top = 200.0
-margin_right = 340.0
-margin_bottom = 221.0
+margin_left = 221.0
+margin_top = 204.0
+margin_right = 261.0
+margin_bottom = 225.0
 custom_fonts/font = SubResource( 2 )
 text = "2x"
 align = 1
+
+[node name="run" type="Sprite" parent="figuras"]
+position = Vector2( 364, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+hframes = 12
 
 [node name="00" type="Label" parent="."]
 margin_left = 1.0
@@ -80,3 +96,18 @@ custom_fonts/font = SubResource( 3 )
 text = "Press Enter to start the game"
 align = 1
 valign = 1
+
+[node name="Szinho" type="Sprite" parent="."]
+position = Vector2( 367, 195 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 11 )
+
+[node name="Dzao" type="Sprite" parent="."]
+position = Vector2( 410, 193 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 10 )
+
+[node name="Dabliu" type="Sprite" parent="."]
+position = Vector2( 367, 155 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 6 )

@@ -5,8 +5,8 @@ var gravidade = 1200
 var velocidade = Vector2.ZERO
 const jump_force = -400
 var cont_jump = 0
-var player_name = ResourceLoader.load("res://save_game/GameConfig.tres").duplicate()
-var state_player = "run_" + player_name.personagem
+var player_name = Gameconfig.personagem
+var state_player = "run_" + player_name
 var hit_player = false
 var direction = 0
 var speed = 4000
@@ -23,11 +23,11 @@ func jump_event():
 	var is_jump_click = Input.is_action_just_pressed("JUMP")
 	
 	if is_on_floor():
-		state_player = "run_" + player_name.personagem
+		state_player = "run_" + player_name
 		
 		if is_jump_click:
 			velocidade.y = jump_force
-			state_player = "jump_" + player_name.personagem
+			state_player = "jump_" + player_name
 			cont_jump += 1
 		
 		elif cont_jump > 0:
@@ -36,7 +36,7 @@ func jump_event():
 	else:
 		if is_jump_click and cont_jump == 1:
 			velocidade.y += jump_force / 2
-			state_player = "d_jump_" + player_name.personagem
+			state_player = "d_jump_" + player_name
 			cont_jump += 1
 	
 	$"anima".play(state_player)
@@ -61,14 +61,14 @@ func _on_hurtBox_body_entered(body):
 	
 	if nome == "Enemy" or nome == "@Enemy":
 		hit_player = true
-		$"anima".play("hit_"+player_name.personagem)
+		$"anima".play("hit_"+player_name)
 		velocidade.x += -5
 		$"../Life".damage()
 
 
 func _on_anima_animation_finished(anim_name):
 	
-	if anim_name == "hit_"+player_name.personagem:
+	if anim_name == "hit_"+player_name:
 		hit_player = false
 		velocidade.x = 0
 		start_invecible_state = true
